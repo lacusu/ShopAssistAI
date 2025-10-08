@@ -4,6 +4,8 @@ ShopAssist AI 2.0 is an enhanced conversational assistant built with Flask and O
 It provides intelligent, data-driven product recommendations through natural conversation.
 
 ---
+Repo: https://github.com/lacusu/ShopAssistAI
+---
 ## 🎬 Demo
 
 Here’s a short demonstration of the chatbot in action:
