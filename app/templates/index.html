@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shop Assist AI 2.0</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Load Font Awesome (for send icon) -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+<div class="chat-container">
+    <h2>Shop Assist AI 2.0</h2>
+
+    <div id="chat-box" class="chat-box"></div>
+
+    <div class="input-container">
+        <input id="user-input" type="text" placeholder="Ask me about laptops..." autocomplete="off"/>
+        <button id="send-btn" onclick="sendMessage()" title="Send message">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <button id="clear-btn" onclick="clearChat()" title="Clear chat"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>
+<!-- Inject Flask config values into a global JS object -->
+<script id="app-config">
+    window.APP_CONFIG = {
+        aiName: "{{ config['AI_NAME'] }}",
+        aiWelcome: `{{ config['AI_WELCOME'] | safe }}`,
+        customerName: `{{ config['CUSTOMER_NAME']}}`,
+    };
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+
+</script>
+</body>
+</html>
